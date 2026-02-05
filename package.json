@@ -3,14 +3,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run",
-    "cy:open": "cypress open",
-    "cy:run": "cypress run",
-    
-    "report:merge": "mochawesome-merge cypress/reports/*.json > cypress/reports/mochawesome.json",
-    "report:html": "marge cypress/reports/mochawesome.json -f report -o cypress/reports",
-    "test:report": "cypress run && npm run report:merge && npm run report:html"
-  },
+  "test": "cypress run",
+  "cy:open": "cypress open",
+  "cy:run": "cypress run",
+
+  "clean:reports": "rimraf cypress/reports reports",
+
+  "report:merge": "mochawesome-merge \"cypress/reports/mochawesome_*.json\" -o cypress/reports/mochawesome.json",
+  "report:html": "marge cypress/reports/mochawesome.json -f report -o reports",
+
+  "test:report": "npm run clean:reports && cypress run && npm run report:merge && npm run report:html"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
