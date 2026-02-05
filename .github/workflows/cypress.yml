@@ -23,7 +23,7 @@ jobs:
 
       - name: Run Cypress + report
         env:
-          CYPRESS_BASE_URL: https://www.epam.com
+          CYPRESS_BASE_URL: https://example.cypress.io
         run: npm run test:report
 
       - name: Upload report artifact

@@ -11,7 +11,7 @@ module.exports = defineConfig({
 
   e2e: {
 
-    baseUrl: "https://example.cypress.io",
+    baseUrl: process.env.CYPRESS_baseUrl || "https://example.cypress.io",
     
     video: false,
     screenshotOnRunFailure: true,
