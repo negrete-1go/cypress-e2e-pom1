@@ -1,8 +1,12 @@
-describe("Smoke test - Cypress public site", () => {
-  it("should load the Cypress example page", () => {
-    cy.visit("https://example.cypress.io");
+const homePage = require("../pages/HomePage");
+const commandsActionsPage = require("../pages/CommandsActionsPage");
 
-    cy.contains("Kitchen Sink").should("be.visible");
-    cy.title().should("contain", "Cypress");
+describe("Smoke - Example Cypress site", () => {
+  it("loads home and navigates to Commands", () => {
+    homePage.visit();
+    homePage.pageShouldBeVisible();
+    homePage.goToCommandOption("Actions");
+    commandsActionsPage.pageShouldBeVisible();
+
   });
 });

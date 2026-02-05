@@ -11,7 +11,7 @@ module.exports = defineConfig({
 
   e2e: {
 
-    baseUrl: "https://www.epam.com",
+    baseUrl: "https://example.cypress.io",
     
     video: false,
     screenshotOnRunFailure: true,
@@ -24,7 +24,6 @@ module.exports = defineConfig({
     testIsolation: true,
   
     setupNodeEvents(on, config) {
-      // implement node event listeners here
       require("cypress-mochawesome-reporter/plugin")(on);
       return config;
     },
