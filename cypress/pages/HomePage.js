@@ -1,5 +1,5 @@
 const BasePage = require("./BasePage");
-const header = require("./header");
+const header = require("./Header");
 
 class HomePage extends BasePage {
   visit() {
