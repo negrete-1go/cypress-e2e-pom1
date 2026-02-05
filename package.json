@@ -3,17 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-  "test": "cypress run",
-  "cy:open": "cypress open",
-  "cy:run": "cypress run",
-
-  "clean:reports": "rimraf cypress/reports reports",
-
-  "report:merge": "mochawesome-merge \"cypress/reports/mochawesome_*.json\" -o cypress/reports/mochawesome.json",
-  "report:html": "marge cypress/reports/mochawesome.json -f report -o reports",
-
-  "test:report": "npm run clean:reports && cypress run && npm run report:merge && npm run report:html"
-},
+    "test": "cypress run",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "clean:reports": "npx rimraf cypress/reports reports",
+    "test:report": "npm run clean:reports && cypress run"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -21,8 +16,6 @@
   "devDependencies": {
     "cypress": "^15.10.0",
     "cypress-mochawesome-reporter": "^4.0.2",
-    "mochawesome": "^7.1.4",
-    "mochawesome-merge": "^5.1.0",
-    "mochawesome-report-generator": "^6.3.2"
+    "mochawesome": "^7.1.4"
   }
 }

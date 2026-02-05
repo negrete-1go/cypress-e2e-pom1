@@ -23,11 +23,13 @@ jobs:
 
       - name: Run Cypress + report
         env:
-          CYPRESS_BASE_URL: https://example.cypress.io
+          CYPRESS_baseUrl: https://example.cypress.io
         run: npm run test:report
 
       - name: Upload report artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: mochawesome-report
           path: cypress/reports
+           
