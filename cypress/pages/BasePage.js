@@ -17,6 +17,10 @@ class BasePage {
     this.get(selector).clear().type(text);
   }
 
+  typeDisabled(selector, text) {
+    this.get(selector).type(text, {force: true});
+  }
+
   // ---------- Assertions ----------
   shouldBeVisible(selector) {
     this.get(selector).should("be.visible");
@@ -24,6 +28,10 @@ class BasePage {
 
   textShouldBeVisible(text, options = {}) {
     this.contains(text, options).should("be.visible");
+  }
+
+  shouldHaveValue(selector, value){
+    this.get(selector).should("have.value", value);
   }
 
   urlShouldInclude(path) {

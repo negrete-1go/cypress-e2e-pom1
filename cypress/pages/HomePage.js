@@ -1,4 +1,5 @@
 const BasePage = require("./BasePage");
+const header = require("./header");
 
 class HomePage extends BasePage {
   visit() {
@@ -9,15 +10,8 @@ class HomePage extends BasePage {
     this.textShouldBeVisible("Kitchen Sink");
   }
 
-  openCommandsMenu() {
-    this.contains("Commands").click();
-    this.shouldBeVisible("ul.dropdown-menu"); // menu is open/visible
-  }
-
   goToCommandOption(option) {
-    this.openCommandsMenu();
-    this.get("ul.dropdown-menu").contains(option).click();
-    this.urlShouldInclude(`/commands/${option.toLowerCase()}`); 
+    header.goToCommand(option);
   }
 }
 
