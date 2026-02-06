@@ -16,6 +16,11 @@ class CommandsActionsPage extends BasePage {
     this.typeDisabled(".action-disabled", text);
   }
 
+  focusPassword(){
+    this.focus(".action-focus");
+    this.shouldHaveClass(".action-focus","focus");
+  }
+
 }
 
 module.exports = new CommandsActionsPage();

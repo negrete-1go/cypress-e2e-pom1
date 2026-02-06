@@ -21,6 +21,10 @@ class BasePage {
     this.get(selector).type(text, {force: true});
   }
 
+  focus(selector) {
+    this.get(selector).focus();
+  }
+
   // ---------- Assertions ----------
   shouldBeVisible(selector) {
     this.get(selector).should("be.visible");
@@ -33,6 +37,12 @@ class BasePage {
   shouldHaveValue(selector, value){
     this.get(selector).should("have.value", value);
   }
+
+  shouldHaveClass(selector, classValue){
+    this.get(selector).should("have.class", classValue);
+  }
+
+  
 
   urlShouldInclude(path) {
     cy.url().should("include", path);

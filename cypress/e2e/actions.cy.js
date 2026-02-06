@@ -18,6 +18,10 @@ describe("Commands Actions", () => {
      commandsActionsPage.fillDisabledTextArea("Disabled Error checking");
   });
 
+  it("allows focusing on password field", () => {
+     commandsActionsPage.focusPassword();
+  });
+
  
 
 });
